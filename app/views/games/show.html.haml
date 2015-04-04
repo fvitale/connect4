@@ -1,0 +1,13 @@
+%h3#player{data: {your_player: @player}}= "Player #{@player}" + (@player.to_i == 1 ? " Blue" : " Red")
+- your_turn = (turn == @player.to_i)
+%h3#turn{data: {your_turn: your_turn.to_s}}
+  = your_turn ? "It's your turn!" : "Waiting for rival to play..."
+- current_board = board
+.current-board{data: {player: @player}}
+  - current_board.each_with_index do |row, row_no|
+    - row.each_with_index do |col, col_no|
+      - color_class = ""
+      - color_class = "blue" if col == 1
+      - color_class = "red" if col == 2
+      %span.square{class: color_class, data: {row_no: row_no, col_no: col_no}}
+    %br

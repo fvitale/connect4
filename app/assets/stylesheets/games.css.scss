@@ -1,0 +1,13 @@
+span.square {
+  width: 35px;
+  height: 35px;
+  display: inline-block;
+  background-color: grey;
+}
+span.square.blue {
+  background-color: blue;
+}
+span.square.red {
+  background-color: red;
+}
+
